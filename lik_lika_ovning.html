@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lik, lika, samma och likadan – grammatikövning</title>
+<style>
+  :root { color-scheme: light; --ink:#243047; --muted:#5b6475; --line:#d9deea; --accent:#3156a6; --pale:#f3f6fc; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#f5f7fb; color:var(--ink); font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+  main { max-width:900px; margin:32px auto; padding:0 16px 40px; }
+  .sheet { background:white; border:1px solid var(--line); border-radius:18px; padding:clamp(20px,4vw,38px); box-shadow:0 8px 28px rgba(36,48,71,.06); }
+  h1 { margin:0 0 8px; font-size:clamp(1.65rem,4vw,2.2rem); line-height:1.2; }
+  .intro { color:var(--muted); margin-top:0; }
+  .rules { background:var(--pale); border-radius:12px; padding:18px 20px; margin:22px 0; }
+  .rules h2 { margin:0 0 10px; font-size:1.1rem; }
+  .rules p { margin:8px 0; }
+  .instruction { font-weight:650; margin:24px 0 14px; }
+  .questions { list-style:none; counter-reset:q; padding:0; margin:0; }
+  .questions li { counter-increment:q; display:grid; grid-template-columns:2rem 1fr; gap:8px; padding:13px 0; border-bottom:1px solid #edf0f5; align-items:start; }
+  .questions li::before { content:counter(q) "."; font-weight:700; color:var(--accent); padding-top:5px; }
+  .sentence { line-height:2.2; }
+  select { display:inline-block; max-width:100%; min-width:145px; padding:7px 30px 7px 9px; margin:2px 3px; border:1px solid #aeb8cb; border-radius:8px; background:white; color:var(--ink); font:inherit; line-height:1.3; }
+  select:focus, button:focus { outline:3px solid #a9c1ff; outline-offset:2px; }
+  select.correct { border-color:#26834a; background:#f0fbf3; }
+  select.incorrect { border-color:#c43d4b; background:#fff3f3; }
+  .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  button { border:0; border-radius:9px; padding:11px 17px; font:inherit; font-weight:650; cursor:pointer; }
+  .primary { background:var(--accent); color:white; }
+  .secondary { background:#e9edf5; color:var(--ink); }
+  #feedback { margin-top:18px; padding:14px 16px; border-radius:10px; background:#f3f6fc; display:none; }
+  #feedback.show { display:block; }
+  #feedback strong { display:block; margin-bottom:4px; }
+  .small { color:var(--muted); font-size:.9rem; margin-top:20px; }
+  @media(max-width:560px) { main { margin:12px auto; } .sheet { border-radius:12px; } select { min-width:125px; } }
+</style>
+</head>
+<body>
+<main>
+<section class="sheet" aria-labelledby="title">
+  <h1 id="title">Lik, lika, samma och likadan</h1>
+  <p class="intro">Grammatikövning · Välj det alternativ som passar bäst i varje mening.</p>
+  <section class="rules" aria-labelledby="rules-title">
+    <h2 id="rules-title">Kom ihåg</h2>
+    <p><strong>Lika</strong> använder vi när någon eller något är eller beter sig på samma sätt, eller när vi jämför egenskaper: <em>De är lika långa.</em></p>
+    <p><strong>Samma</strong> betyder ofta att något är gemensamt eller identiskt: <em>Vi har samma mamma och pappa.</em></p>
+    <p><strong>Likadan, likadant, likadana</strong> använder vi när personer eller saker ser likadana ut eller är av samma sort. Orden böjs: <em>en likadan väska, ett likadant hus, likadana byxor.</em></p>
+    <p><strong>Lik</strong> förekommer bland annat i uttryck som <em>vara lik någon</em>: <em>Hon är lik sin mamma.</em></p>
+  </section>
+  <p class="instruction">Skriv rätt alternativ i luckorna genom att välja i menyerna.</p>
+  <form id="exercise">
+    <ol class="questions">
+      <li><div class="sentence">Vi bor på <select aria-label="Fråga 1" data-answer="samma"><option value="">Välj …</option></select> gata, men i olika hus.</div></li>
+      <li><div class="sentence">Hon har <select aria-label="Fråga 2" data-answer="likadana"><option value="">Välj …</option></select> byxor som jag, vi har båda blå Levi’s.</div></li>
+      <li><div class="sentence">De två pojkarna är <select aria-label="Fråga 3" data-answer="lika"><option value="">Välj …</option></select> långa.</div></li>
+      <li><div class="sentence">Vi gör <select aria-label="Fråga 4" data-answer="samma"><option value="">Välj …</option></select> saker varje söndag. Kan vi inte göra något nytt?</div></li>
+      <li><div class="sentence">Sverige är nästan <select aria-label="Fråga 5" data-answer="lika"><option value="">Välj …</option></select> stort som Frankrike.</div></li>
+      <li><div class="sentence">Morfar har röstat på <select aria-label="Fråga 6" data-answer="samma"><option value="">Välj …</option></select> parti i hela sitt liv.</div></li>
+      <li><div class="sentence">Jag och min bror har nästan <select aria-label="Fråga 7" data-answer="likadana"><option value="">Välj …</option></select> lägenheter.</div></li>
+      <li><div class="sentence">Eftersom båda är från Danmark talar de <select aria-label="Fråga 8" data-answer="samma"><option value="">Välj …</option></select> språk.</div></li>
+      <li><div class="sentence">Alla mina barn spelar fotboll. Det är skönt att de har <select aria-label="Fråga 9" data-answer="samma"><option value="">Välj …</option></select> intresse.</div></li>
+      <li><div class="sentence">Skönt att det inte är <select aria-label="Fråga 10" data-answer="lika"><option value="">Välj …</option></select> kallt i dag som i går.</div></li>
+      <li><div class="sentence">Karin är alltid <select aria-label="Fråga 11" data-answer="lika"><option value="">Välj …</option></select> glad och trevlig.</div></li>
+      <li><div class="sentence">Min väska är inte exakt <select aria-label="Fråga 12" data-answer="likadan"><option value="">Välj …</option></select> som din. Min är mörkare.</div></li>
+      <li><div class="sentence">Han har inte förändrats. Han är <select aria-label="Fråga 13" data-answer="likadan"><option value="">Välj …</option></select> som förut.</div></li>
+      <li><div class="sentence">Man har inte längre <select aria-label="Fråga 14" data-answer="samma"><option value="">Välj …</option></select> lust att leka när man är tonåring som när man var barn.</div></li>
+      <li><div class="sentence">Vi föddes <select aria-label="Fråga 15" data-answer="samma"><option value="">Välj …</option></select> år.</div></li>
+      <li><div class="sentence">De ska bygga ett exakt <select aria-label="Fråga 16" data-answer="likadant"><option value="">Välj …</option></select> hus som vårt.</div></li>
+      <li><div class="sentence">Patienterna beskriver <select aria-label="Fråga 17" data-answer="samma"><option value="">Välj …</option></select> symtom, båda har klåda och rinnande ögon.</div></li>
+      <li><div class="sentence">Läkarna på avdelningen har <select aria-label="Fråga 18" data-answer="likadana"><option value="">Välj …</option></select> läkarrockar, men i olika storlekar.</div></li>
+      <li><div class="sentence">Jag och min halvbror är <select aria-label="Fråga 19a" data-answer="lika"><option value="">Välj …</option></select> varandra, vi har <select aria-label="Fråga 19b" data-answer="samma"><option value="">Välj …</option></select> mamma och vi har båda <select aria-label="Fråga 19c" data-answer="likadana"><option value="">Välj …</option></select> smilgropar.</div></li>
+    </ol>
+    <div class="actions">
+      <button type="button" class="primary" id="check">Rätta svaren</button>
+      <button type="button" class="secondary" id="show">Visa facit</button>
+      <button type="reset" class="secondary" id="reset">Börja om</button>
+    </div>
+    <div id="feedback" role="status" aria-live="polite"></div>
+  </form>
+  <p class="small">Tips: Läs hela meningen innan du väljer. Fundera på om du jämför en egenskap, talar om något gemensamt eller beskriver saker som ser likadana ut.</p>
+</section>
+</main>
+<script>
+const choices = ['lika','lik','samma','likadan','likadant','likadana'];
+document.querySelectorAll('select[data-answer]').forEach(select => {
+  choices.forEach(word => {
+    const option = document.createElement('option'); option.value = word; option.textContent = word; select.appendChild(option);
+  });
+});
+const feedback = document.getElementById('feedback');
+function markAnswers(showAll=false) {
+  const fields = [...document.querySelectorAll('select[data-answer]')];
+  let correct = 0, answered = 0;
+  fields.forEach(field => {
+    const answer = field.dataset.answer;
+    field.classList.remove('correct','incorrect');
+    if (field.value) answered++;
+    if (field.value === answer) { correct++; field.classList.add('correct'); }
+    else if (field.value || showAll) { field.classList.add('incorrect'); }
+    if (showAll) field.value = answer;
+  });
+  if (showAll) {
+    fields.forEach(field => field.classList.add('correct'));
+    feedback.innerHTML = '<strong>Facit</strong>Rätt svar visas i alla luckor. Läs igenom meningarna och fundera på varför orden passar.';
+  } else {
+    feedback.innerHTML = `<strong>Du har ${correct} av ${fields.length} rätt.</strong>${answered < fields.length ? `Du har svarat på ${answered} av ${fields.length} luckor. ` : ''}${correct === fields.length ? 'Utmärkt! Alla svar är rätt.' : 'De gröna luckorna är rätt. Ändra de röda och rätta igen.'}`;
+  }
+  feedback.classList.add('show');
+}
+document.getElementById('check').addEventListener('click', () => markAnswers(false));
+document.getElementById('show').addEventListener('click', () => markAnswers(true));
+document.getElementById('reset').addEventListener('click', () => {
+  setTimeout(() => { document.querySelectorAll('select').forEach(s => s.classList.remove('correct','incorrect')); feedback.classList.remove('show'); feedback.textContent=''; }, 0);
+});
+</script>
+</body>
+</html>
